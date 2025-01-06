@@ -1,0 +1,12 @@
+services:
+  zaki_db:
+    image: postgres:15
+    env_file:
+      - .env.local
+    ports:
+      - "${POSTGRES_PORT}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
